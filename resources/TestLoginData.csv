@@ -1,0 +1,5 @@
+email,password,expected
+,,This is a required field.
+asdf@gmail.com,,This is a required field.
+,1234567,This is a required field.
+asd@yahoo.com,1234567,Invalid login or password.
