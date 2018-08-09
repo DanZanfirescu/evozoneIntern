@@ -1,4 +1,4 @@
-package com.dan.serenity.features.search;
+package com.dan.serenity.features;
 
 import net.thucydides.core.annotations.Managed;
 import org.junit.Before;

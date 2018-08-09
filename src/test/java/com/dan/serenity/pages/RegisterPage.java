@@ -25,7 +25,6 @@ public class RegisterPage extends PageObject {
     private WebElementFacade registerButton;
 
 
-
     public void setFirstNameField(String firstName){
         typeInto(firstNameField, firstName);
     }

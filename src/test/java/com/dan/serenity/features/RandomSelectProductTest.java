@@ -1,4 +1,4 @@
-package com.dan.serenity.features.search;
+package com.dan.serenity.features;
 
 import com.dan.serenity.steps.serenity.SelectRandomProductSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;

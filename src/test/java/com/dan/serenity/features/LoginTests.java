@@ -1,9 +1,8 @@
-package com.dan.serenity.features.search;
+package com.dan.serenity.features;
 
 import com.dan.serenity.steps.serenity.LoginSteps;
 import com.dan.serenity.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
-import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
@@ -18,10 +17,11 @@ public class LoginTests extends BaseTest {
     private LoginSteps loginSteps;
     String email, password, expected;
     @Test
-    public void loginTestWithInalidCredentials(){
+    public void loginTest(){
         loginSteps.openPage();
         loginSteps.typeIntoLoginFields(email, password);
         loginSteps.clickOnLoginButton();
         loginSteps.checkMessage(expected);
     }
+
 }

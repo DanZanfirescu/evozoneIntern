@@ -5,6 +5,7 @@ import com.dan.serenity.factories.Factory;
 import com.dan.serenity.pages.*;
 import com.dan.serenity.utils.Constants;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
@@ -104,6 +105,11 @@ public class RegisterSteps extends ScenarioSteps {
     @Step
     public void clickDeleteCustomer(){
         magentoManageCustomers.clickOnDeleteCustomerButton();
+    }
 
+    @StepGroup
+    public void loginToMagento(){
+        typeIntoAdminLoginFields();
+        clickLoginButton();
     }
 }

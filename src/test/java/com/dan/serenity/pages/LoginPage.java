@@ -6,6 +6,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
+import java.util.ArrayList;
+
 
 @DefaultUrl(Constants.BASE_URL + "/customer/account/login/")
 public class LoginPage extends PageObject {
@@ -22,8 +24,9 @@ public class LoginPage extends PageObject {
     private WebElementFacade passwordRequiredMessage;
     @FindBy(css = ".error-msg span")
     private WebElementFacade errorMessage;
+    private MyAccountPage myAccountPage;
 
-
+    public ArrayList<String> messages = new ArrayList<>();
 
     public void setLoginEmailField (String email){
         typeInto(loginEmailField, email);
@@ -47,5 +50,20 @@ public class LoginPage extends PageObject {
 
     public String getErrorMessage(){
         return errorMessage.getText();
+    }
+
+    public void messages(){
+        if(emailRequiredMessage.isPresent()){
+            messages.add(getEmailRequiredMessage());
+        }
+        if(passwordRequiredMessage.isPresent()){
+            messages.add(getPasswordRequiredMessage());
+        }
+        if(errorMessage.isPresent()){
+            messages.add(getErrorMessage());
+       }
+       if(myAccountPage.helloMessage.isPresent()){
+           messages.add(myAccountPage.helloMessage.getText());
+        }
     }
 }

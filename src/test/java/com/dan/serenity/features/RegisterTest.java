@@ -1,24 +1,18 @@
-package com.dan.serenity.features.search;
+package com.dan.serenity.features;
 
-import com.dan.serenity.pages.MyAccountPage;
+
 import com.dan.serenity.steps.serenity.RegisterSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
-
 
 
 @RunWith(SerenityRunner.class)
-public class RegisterTest extends BaseTest{
+public class RegisterTest extends BaseTest {
 
     @Steps
     private RegisterSteps registerSteps;
-
-
 
     @Test
     public void registerTestValidCredentials(){
@@ -40,8 +34,5 @@ public class RegisterTest extends BaseTest{
         registerSteps.checkEmailAccount();
         registerSteps.clickDeleteCustomer();
     }
-
-
-
 
 }
